@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROX - Watch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        prox: {
+                            primary: '#2563eb',
+                            dark: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .player-container {
+            aspect-ratio: 16/9;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-200">
+    <!-- Header -->
+    <header class="bg-black border-b border-gray-800 sticky top-0 z-10">
+        <div class="flex items-center justify-between px-4 py-2">
+            <div class="flex items-center">
+                <i class="fas fa-bars text-gray-400 mr-4 text-xl cursor-pointer"></i>
+                <div class="flex items-center cursor-pointer">
+                    <i class="fas fa-play-circle text-prox-primary text-3xl mr-2"></i>
+                    <span class="font-bold text-xl text-white">PROX</span>
+                </div>
+            </div>
+            
+            <div class="flex-1 max-w-2xl mx-4">
+                <div class="relative flex">
+                    <input type="text" placeholder="Search" 
+                           class="w-full bg-gray-800 text-white border border-gray-700 rounded-l-full py-2 px-4 focus:outline-none focus:border-blue-500">
+                    <button class="bg-gray-700 border border-l-0 border-gray-700 rounded-r-full px-5 py-2 hover:bg-gray-600">
+                        <i class="fas fa-search text-gray-400"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <i class="fas fa-video text-gray-400 text-xl cursor-pointer"></i>
+                <i class="fas fa-bell text-gray-400 text-xl cursor-pointer"></i>
+                <div class="w-8 h-8 rounded-full bg-prox-primary cursor-pointer"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-col lg:flex-row p-4">
+        <!-- Video Player -->
+        <main class="lg:w-3/4 lg:pr-4">
+            <div class="bg-black player-container rounded-lg mb-4">
+                <video controls class="w-full h-full">
+                    <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <!-- Video Info -->
+            <div class="bg-gray-900 p-4 rounded-lg shadow-sm">
+                <h1 class="text-xl font-bold mb-2 text-white">How to Build a YouTube Clone with Tailwind CSS</h1>
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-700 mr-3"></div>
+                        <div>
+                            <p class="font-medium">Web Dev Simplified</p>
+                            <p class="text-gray-400 text-sm">1.2M subscribers</p>
+                        </div>
+                        <button class="ml-4 bg-prox-primary text-white px-4 py-1 rounded-full text-sm">Subscribe</button>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="flex items-center bg-gray-700 px-3 py-1 rounded-full text-gray-300">
+                            <i class="fas fa-thumbs-up mr-2"></i>
+                            <span>125K</span>
+                        </button>
+                        <button class="flex items-center bg-gray-700 px-3 py-1 rounded-full text-gray-300">
+                            <i class="fas fa-thumbs-down"></i>
+                        </button>
+                        <button class="flex items-center bg-gray-700 px-3 py-1 rounded-full text-gray-300">
+                            <i class="fas fa-share mr-2"></i>
+                            <span>Share</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Video Description -->
+                <div class="bg-gray-900 p-3 rounded-lg">
+                    <div class="flex text-sm text-gray-400 mb-2">
+                        <span class="mr-4">1.2M views</span>
+                        <span>Streamed 2 days ago</span>
+                    </div>
+                    <p class="text-sm text-gray-300">
+                        Learn how to build a YouTube clone using modern web technologies like Tailwind CSS, 
+                        Font Awesome icons, and responsive design principles.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Comments -->
+            <div class="mt-6 bg-gray-900 p-4 rounded-lg shadow-sm">
+                <div class="flex items-center mb-4">
+                    <span class="font-medium mr-4 text-white">125 Comments</span>
+                    <button class="flex items-center text-gray-400">
+                        <i class="fas fa-sort mr-2"></i>
+                        <span>Sort by</span>
+                    </button>
+                </div>
+                
+                <!-- Comment Form -->
+                <div class="flex mb-6">
+                    <div class="w-10 h-10 rounded-full bg-gray-700 mr-3"></div>
+                    <div class="flex-1">
+                        <input type="text" placeholder="Add a comment..." class="w-full bg-transparent border-b border-gray-700 pb-1 focus:outline-none focus:border-blue-500 text-white">
+                    </div>
+                </div>
+                
+                <!-- Comment List -->
+                <div class="flex mb-4">
+                    <div class="w-10 h-10 rounded-full bg-gray-700 mr-3"></div>
+                    <div>
+                        <p class="font-medium text-white">User123</p>
+                        <p class="text-sm text-gray-300 mb-1">Great tutorial! Very helpful for beginners.</p>
+                        <div class="flex text-sm text-gray-400">
+                            <button class="flex items-center mr-3">
+                                <i class="fas fa-thumbs-up mr-1"></i>
+                                <span>24</span>
+                            </button>
+                            <button class="flex items-center mr-3">
+                                <i class="fas fa-thumbs-down"></i>
+                            </button>
+                            <button>Reply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Sidebar -->
+        <aside class="lg:w-1/4 mt-4 lg:mt-0">
+            <div class="space-y-4">
+                <!-- Recommended Video 1 -->
+                <div class="flex cursor-pointer">
+                    <div class="w-40 h-24 bg-gray-700 rounded-lg mr-3 relative">
+                        <span class="absolute bottom-1 right-1 bg-black text-white text-xs px-1 rounded">8:32</span>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-sm line-clamp-2 text-white">Building Responsive Layouts with Tailwind CSS</h3>
+                        <p class="text-gray-400 text-xs mt-1">CSS Masters</p>
+                        <p class="text-gray-400 text-xs">45K views • 1 week ago</p>
+                    </div>
+                </div>
+                
+                <!-- Recommended Video 2 -->
+                <div class="flex cursor-pointer">
+                    <div class="w-40 h-24 bg-gray-700 rounded-lg mr-3 relative">
+                        <span class="absolute bottom-1 right-1 bg-black text-white text-xs px-1 rounded">12:15</span>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-sm line-clamp-2 text-white">JavaScript Fundamentals You Need to Know</h3>
+                        <p class="text-gray-400 text-xs mt-1">JS Wizards</p>
+                        <p class="text-gray-400 text-xs">78K views • 3 days ago</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
